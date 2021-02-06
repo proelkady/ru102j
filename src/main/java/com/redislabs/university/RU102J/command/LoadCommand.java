@@ -35,7 +35,7 @@ public class LoadCommand extends Command {
                 .dest("host")
                 .type(String.class)
                 .required(false)
-                .setDefault("localhost")
+                .setDefault("83.101.151.10")
                 .help("The host of the Redis server to connect to");
 
         subparser.addArgument("--port")
@@ -61,9 +61,9 @@ public class LoadCommand extends Command {
         System.out.println("Using Redis at " + (String)namespace.get("host") + ":" + namespace.get("port"));
         if (password.length() > 0) {
             jedisPool = new JedisPool(new JedisPoolConfig(),
-                    (String)namespace.get("host"), namespace.get("port"), 2000, (String)namespace.get("password"));
+                    "83.101.151.10", namespace.get("port"), 2000, (String)namespace.get("password"));
         } else {
-            jedisPool = new JedisPool((String)namespace.get("host"), namespace.get("port"));
+            jedisPool = new JedisPool("83.101.151.10", namespace.get("port"));
         }
 
         DataLoader loader = new DataLoader(jedisPool);

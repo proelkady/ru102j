@@ -17,7 +17,7 @@ public class RunCommand extends Command {
                 .dest("host")
                 .type(String.class)
                 .required(false)
-                .setDefault("localhost")
+                .setDefault("83.101.151.10")
                 .help("The host of the Redis server to connect to");
 
         subparser.addArgument("--port")

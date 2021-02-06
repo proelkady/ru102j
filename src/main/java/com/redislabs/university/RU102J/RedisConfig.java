@@ -3,7 +3,7 @@ package com.redislabs.university.RU102J;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RedisConfig {
-    public static final String DEFAULT_HOST = "localhost";
+    public static final String DEFAULT_HOST = "83.101.151.10";
     public static final Integer DEFAULT_PORT = 6379;
     public static final String DEFAULT_PASSWORD = "";
     public String host;
