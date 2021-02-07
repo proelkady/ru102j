@@ -62,8 +62,7 @@ public class CapacityDaoRedisImpl implements CapacityDao {
         try(Jedis jedis = jedisPool.getResource()){
             String capacityRankingKey = RedisSchema.getCapacityRankingKey();
 
-            Long zrange = jedis.zrevrank(capacityRankingKey, siteId+"");
-            return zrange;
+            return jedis.zrevrank(capacityRankingKey, siteId+"");
         }
         // END Challenge #4
     }
